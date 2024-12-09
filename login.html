@@ -6,14 +6,27 @@
   <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Estilo global */
     body {
       background: linear-gradient(to bottom, #2c1a13, #1e1109);
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
     }
+
     .gradient-border {
       border-image: linear-gradient(90deg, #e3a617, #d88c24, #a5662a) 1;
     }
+
     .btn-gradient {
       background: linear-gradient(to right, #d88c24, #e3a617);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .w-1/2 {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -79,7 +92,7 @@
 
   <!-- Rodapé -->
   <footer class="absolute bottom-4 text-center text-sm text-gray-500 w-full">
-    2023 | Desenvolvido por <a href="#" class="text-yellow-400 hover:underline">Equipe BarTech</a>
+    2024 | Desenvolvido por <a href="#" class="text-yellow-400 hover:underline">Equipe COLLAB</a>
   </footer>
 
 </body>
