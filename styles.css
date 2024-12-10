@@ -27,8 +27,8 @@ body {
 
 .loading-container {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 .loading-wrapper {
@@ -52,8 +52,11 @@ body {
   background: #ffcc00;
   transform: translateY(100%);
   z-index: 0;
-  mix-blend-mode: multiply; /* Mistura a cor com a imagem */
-  animation: fillEffect 2.5s ease-out forwards; /* Animação de preenchimento */
+  mask-image: url("https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  animation: fillEffect 2.5s ease-out forwards;
 }
 
 @keyframes fillEffect {
