@@ -27,8 +27,8 @@ body {
 
 .loading-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 .loading-wrapper {
@@ -52,10 +52,12 @@ body {
   background: #ffcc00;
   transform: translateY(100%);
   z-index: 0;
-  mask-image: url("https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true");
-  mask-size: contain;
+  mask-image: url('https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true');
   mask-repeat: no-repeat;
-  mask-position: center;
+  mask-size: cover;
+  -webkit-mask-image: url('https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
   animation: fillEffect 2.5s ease-out forwards;
 }
 
