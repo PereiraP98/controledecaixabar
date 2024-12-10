@@ -7,7 +7,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
+  <!-- Tela de Carregamento -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-container">
+      <img src="https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true" alt="Carregando" class="loading-image">
+      <div class="loading-effect"></div>
+    </div>
+  </div>
+
+  <!-- Página de Login -->
+  <div class="container" id="login-page" style="display: none;">
     <!-- Janela de Login -->
     <div class="login-section">
       <form>
@@ -29,6 +38,7 @@
     <!-- Seção de Fundo -->
     <div class="background-section"></div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
