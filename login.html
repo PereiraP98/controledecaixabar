@@ -4,118 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <style>
-    /* Estilo global */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: url('https://github.com/PereiraP98/controledecaixabar/raw/refs/heads/main/assets/fundologin.webp') no-repeat center center/cover;
-    }
-
-    .container {
-      display: flex;
-      width: 90%;
-      max-width: 1200px;
-      height: 80vh;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    /* Seção da janela de login */
-    .login-section {
-      flex: 1;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 40px;
-      color: #fff;
-    }
-
-    .login-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .login-section h1 span {
-      color: #ffcc00;
-    }
-
-    .login-section form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .login-section label {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .login-section input {
-      padding: 12px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
-
-    .login-section input:focus {
-      border-color: #ffcc00;
-      outline: none;
-      box-shadow: 0 0 8px #ffcc00;
-    }
-
-    .btn-login {
-      padding: 12px;
-      background: linear-gradient(to right, #d88c24, #e3a617);
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #000;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn-login:hover {
-      opacity: 0.9;
-    }
-
-    .forgot-password, .create-account a {
-      font-size: 0.9rem;
-      color: #ccc;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .forgot-password:hover, .create-account a:hover {
-      color: #ffcc00;
-    }
-
-    .create-account {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    /* Seção de imagem no fundo */
-    .background-section {
-      flex: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -124,20 +13,20 @@
       <h1>Faça seu Login<span>.</span></h1>
       <form>
         <!-- Campo de Email -->
-        <div>
+        <div class="input-group">
           <label for="email">Email</label>
           <input type="email" id="email" placeholder="Digite seu email">
         </div>
         <!-- Campo de Senha -->
-        <div>
+        <div class="input-group">
           <label for="senha">Senha</label>
           <input type="password" id="senha" placeholder="Digite sua senha">
         </div>
         <!-- Link e Botão -->
-        <div>
+        <div class="actions">
           <a href="#" class="forgot-password">Esqueci minha senha</a>
+          <button type="submit" class="btn-login">Entrar</button>
         </div>
-        <button type="submit" class="btn-login">Entrar</button>
         <!-- Link para criar conta -->
         <p class="create-account">
           <a href="#">Ainda não tenho uma conta</a>
@@ -145,7 +34,7 @@
       </form>
     </div>
 
-    <!-- Seção de Imagem -->
+    <!-- Seção de Fundo -->
     <div class="background-section"></div>
   </div>
 </body>
