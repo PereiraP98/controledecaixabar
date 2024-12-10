@@ -39,31 +39,21 @@ body {
 }
 
 .loading-image {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: fadeIn 1s ease-out; /* Animação inicial de fade */
+  z-index: 1;
 }
 
-.loading-effect {
+.loading-fill {
   position: absolute;
   width: 100%;
   height: 100%;
   background: #ffcc00;
   transform: translateY(100%);
+  z-index: 0;
+  mix-blend-mode: multiply; /* Mistura a cor com a imagem */
   animation: fillEffect 2.5s ease-out forwards; /* Animação de preenchimento */
-  clip-path: circle(50% at center); /* Garante o preenchimento apenas dentro da imagem */
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
 }
 
 @keyframes fillEffect {
@@ -160,4 +150,3 @@ body {
   width: 60%;
   background: url('https://github.com/PereiraP98/controledecaixabar/raw/refs/heads/main/assets/fundologin.webp') no-repeat center center/cover;
 }
-
