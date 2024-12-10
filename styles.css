@@ -23,13 +23,25 @@ body {
 /* Janela de Login */
 .login-section {
   width: 40%;
-  background: rgba(0, 0, 0, 0.9); /* Sólido */
+  background: #000; /* Fundo sólido preto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   color: #fff;
+  position: relative;
+}
+
+.login-section::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px; /* Largura da linha de desfoque */
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
 }
 
 .login-section h1 {
@@ -93,9 +105,8 @@ body {
   opacity: 0.9;
 }
 
-/* Seção Desfocada */
+/* Seção de Fundo */
 .background-section {
   width: 60%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  background: url('https://github.com/PereiraP98/controledecaixabar/raw/refs/heads/main/assets/fundologin.webp') no-repeat center center/cover;
 }
