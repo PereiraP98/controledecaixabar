@@ -31,31 +31,25 @@ body {
   height: 150px;
 }
 
-.loading-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.loading-image {
+/* Imagem transparente fixa */
+.loading-image.transparent {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.1; /* Imagem começa transparente */
+  opacity: 0.2;
   z-index: 1;
 }
 
+/* Imagem normal com efeito de preenchimento */
 .loading-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true');
-  background-size: cover;
-  background-position: center;
+  background: url('https://github.com/PereiraP98/controledecaixabar/blob/main/assets/fundoloading.png?raw=true') no-repeat center center;
+  background-size: contain;
   transform: translateY(100%);
-  animation: fillEffect 2.5s ease-out forwards;
   z-index: 2;
+  animation: fillEffect 2.5s ease-out forwards;
 }
 
 @keyframes fillEffect {
