@@ -31,11 +31,20 @@ body {
   height: 150px;
 }
 
-.loading-image {
-  position: absolute;
+.loading-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  overflow: hidden;
+}
+
+.loading-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeIn 1s ease-out; /* Animação inicial de fade */
 }
 
 .loading-effect {
@@ -43,18 +52,26 @@ body {
   width: 100%;
   height: 100%;
   background: #ffcc00;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  animation: fillEffect 2.5s forwards;
-  opacity: 0.8;
+  transform: translateY(100%);
+  animation: fillEffect 2.5s ease-out forwards; /* Animação de preenchimento */
+  clip-path: circle(50% at center); /* Garante o preenchimento apenas dentro da imagem */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes fillEffect {
   0% {
-    transform: scaleY(0);
+    transform: translateY(100%);
   }
   100% {
-    transform: scaleY(1);
+    transform: translateY(0);
   }
 }
 
