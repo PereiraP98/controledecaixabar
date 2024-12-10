@@ -9,3 +9,4 @@ window.onload = function () {
     loginPage.style.display = 'flex'; // Mostra a página de login
   }, 2500); // 2.5 segundos para o efeito de preenchimento
 };
+
