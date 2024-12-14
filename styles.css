@@ -179,7 +179,8 @@ body {
     font-size: 0.875rem;
   }
 
+  /* Efeito de leve desfoque na imagem de fundo em dispositivos móveis */
   .background-section {
-    display: none; /* Opcional: remover a imagem de fundo em telas muito pequenas */
+    filter: blur(3px);
   }
 }
