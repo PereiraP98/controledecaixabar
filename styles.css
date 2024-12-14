@@ -1,6 +1,6 @@
-/* Ajuste de fonte base para facilitar escalonamento */
+/* Ajuste de fonte base */
 html {
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 /* Estilo global */
@@ -10,14 +10,17 @@ html {
   box-sizing: border-box;
 }
 
+/* Corpo com imagem de fundo */
 body {
   font-family: 'Arial', sans-serif;
   min-height: 100vh;
+  overflow: auto;
+  /* Imagem de fundo sempre visível em qualquer dispositivo */
+  background: url('https://github.com/PereiraP98/controledecaixabar/raw/refs/heads/main/assets/fundologin.webp') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
-  overflow: auto; /* permitir rolagem em telas muito pequenas */
+  position: relative;
 }
 
 /* Tela de Carregamento */
@@ -48,22 +51,24 @@ body {
 
 /* Página de Login */
 .container {
-  display: flex;
   width: 100%;
   height: 100vh;
-}
-
-.login-section {
-  width: 40%;
-  background: #000;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+/* A seção de login terá um fundo escuro semi-transparente 
+   para garantir visibilidade sobre a imagem (principalmente no mobile) */
+.login-section {
+  background: rgba(0,0,0,0.7);
   padding: 2rem;
   color: #fff;
-  position: relative;
-  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  box-shadow: 8px 8px 30px rgba(0,0,0,0.9);
+  width: 90%;
+  max-width: 400px;
 }
 
 .login-section h1 {
@@ -76,15 +81,12 @@ body {
 }
 
 .login-section form {
-  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
 }
 
 .input-group {
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -127,24 +129,8 @@ body {
   opacity: 0.9;
 }
 
-/* Imagem de fundo */
-.background-section {
-  width: 60%;
-  background: url('https://github.com/PereiraP98/controledecaixabar/raw/refs/heads/main/assets/fundologin.webp') no-repeat center center/cover;
-}
-
-/* Media Queries para Responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .login-section, 
-  .background-section {
-    width: 100%;
-  }
-
   .login-section h1 {
     font-size: 2rem;
   }
@@ -164,7 +150,19 @@ body {
   }
 }
 
+/* Em dispositivos móveis (ex: max-width: 480px), aplicar leve desfoque 
+   na imagem de fundo do body */
 @media (max-width: 480px) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Criamos uma camada sobre a imagem de fundo original */
+    backdrop-filter: blur(5px);
+    z-index: -1; 
+  }
+
   .login-section h1 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -178,11 +176,5 @@ body {
   .btn-login {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
-  }
-
-  /* Aplicar desfoque na imagem de fundo para dispositivos móveis */
-  .background-section {
-    filter: blur(5px);
-    background-size: cover; /* Garante que o fundo se adapte corretamente */
   }
 }
