@@ -7,5 +7,5 @@ window.onload = function () {
   setTimeout(() => {
     loadingScreen.style.display = 'none'; // Esconde a tela de carregamento
     loginPage.style.display = 'flex'; // Mostra a página de login
-  }, 3000); // 3 segundos
+  }, 5000); 
 };
